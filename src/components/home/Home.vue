@@ -8,8 +8,8 @@
         <span>综合信息</span>
       </div>
       <div class="area-btn">
-        <input type="text" style="width:80%">
-        <button>搜索</button>
+        <el-input size="mini" ></el-input>
+        <el-button size="mini">搜索</el-button>
       </div>
       <div class="area-history">
         <span>历史记录:</span>
@@ -29,7 +29,7 @@
           class="home-image1"
         >
         <!-- 在移动端时使用轮播 -->
-        <el-carousel :interval="4000" type="card" style="margin-top:8px;">
+        <el-carousel :interval="4000" type="card" style="margin-top:8px;" class="isShow-carousel">
           <el-carousel-item v-for="item in bannerList" :key="item.id" class="setSwitch">
             <img :src="item.imageSrc" alt="广告图片" srcset class="home-image2" height="100%">
           </el-carousel-item>

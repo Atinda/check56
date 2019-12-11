@@ -11,7 +11,7 @@
       <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="header-row-right">
           <!-- 适应移动端的登录按钮组 -->
-          <el-button size="small" class="setBtn" @click="login()">登录</el-button>
+          <el-button size="mini" class="setBtn" @click="login()">登录</el-button>
           <span class="setMiniBtn" @click="login()">登录</span>
           <span>关注微信公众号</span>
         </div>
@@ -74,5 +74,4 @@ export default {
   margin-right: 3px;
   justify-content: flex-end;
 }
-
 </style>
