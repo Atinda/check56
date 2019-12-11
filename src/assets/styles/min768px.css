@@ -1,0 +1,14 @@
+/* 视窗>=768时的样式表 */
+@media screen and (min-width: 768px) {
+  .home {
+    color: green
+  }
+
+  .setBtn {
+    display: none;
+  }
+
+  .setMiniBtn {
+    display: show
+  }
+}

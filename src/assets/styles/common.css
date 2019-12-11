@@ -1,8 +1,17 @@
 /* 公共样式文件 */
 /*
-*先适应移动端，再适应PC端
+*先适应移动端-pad，再适应PC端
 *
 */
-.home{
-    color: red
-}
+* {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px
+  }
