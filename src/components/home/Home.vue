@@ -19,14 +19,21 @@
     </div>
     <div class="content">
       <div class="banner">
+        <!-- 在PC端时使用平铺 -->
         <img
           v-for="item in bannerList"
           :key="item.id"
           :src="item.imageSrc"
           alt="广告图片"
           srcset
-          class="home-image2"
+          class="home-image1"
         >
+        <!-- 在移动端时使用轮播 -->
+        <el-carousel :interval="4000" type="card" style="margin-top:8px;">
+          <el-carousel-item v-for="item in bannerList" :key="item.id" class="setSwitch">
+            <img :src="item.imageSrc" alt="广告图片" srcset class="home-image2" height="100%">
+          </el-carousel-item>
+        </el-carousel>
       </div>
       <div class="member-line">
         <div class="cityArea">
@@ -67,12 +74,12 @@ export default {
       bannerList: [
         { name: 1, imageSrc: require("../../assets/images/logo.png") },
         { name: 2, imageSrc: require("../../assets/images/logo.png") },
-        { name: 3, imageSrc: require("../../assets/images/logo.png") }
-        // {name:4,imageSrc: require("../../assets/images/logo.png")},
-        // {name:5,imageSrc: require("../../assets/images/logo.png")},
-        // {name:6,imageSrc: require("../../assets/images/logo.png")},
-        // {name:7,imageSrc: require("../../assets/images/logo.png")},
-        // {name:8,imageSrc: require("../../assets/images/logo.png")}
+        { name: 3, imageSrc: require("../../assets/images/logo.png") },
+        { name: 4, imageSrc: require("../../assets/images/logo.png") },
+        { name: 5, imageSrc: require("../../assets/images/logo.png") },
+        { name: 6, imageSrc: require("../../assets/images/logo.png") },
+        { name: 7, imageSrc: require("../../assets/images/logo.png") },
+        { name: 8, imageSrc: require("../../assets/images/logo.png") }
       ],
       // 公司数据
       companyLsit: [
@@ -183,6 +190,6 @@ button {
 }
 .company-item {
   margin: 5px;
-  background: #e8e8e5
+  background: #e8e8e5;
 }
 </style>
