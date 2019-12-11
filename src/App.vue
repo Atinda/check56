@@ -18,16 +18,16 @@
       </el-col>
     </el-row>
     <router-view/>
-    <Login :isShow="isShow" @setFalse="setFalse()"></Login>
+    <Dialog :isShow="isShow" @setFalse="setFalse()"></Dialog>
   </div>
 </template>
 
 <script>
-import Login from './components/home/Login'
+import Dialog from './components/home/Dialog'
 export default {
   name: "App",
   components:{
-    Login
+    Dialog
   },
   data(){
     return{

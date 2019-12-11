@@ -40,7 +40,7 @@
   /* 搜索区域 */
   .search-area {
     margin: 0 10px;
-    border: 1px solid gray;
+    border: 1px solid #a9a9a9;
     border-radius: 5px;
   }
 
@@ -59,5 +59,16 @@
       width: 100%;
       height: 75%;
       padding: 0 20px;
+  }
+  /* 注册页面 */
+  .register{
+      margin: 5px;
+  }
+  .register input{
+      width: 80%;
+  }
+  /* 选择城市 */
+  .city-search input{
+    width: 66%
   }
 }

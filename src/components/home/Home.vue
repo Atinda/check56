@@ -137,15 +137,15 @@ export default {
 .area-tabs {
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #a9a9a9;
 }
 .area-tabs span {
   flex: 1;
   cursor: pointer;
 }
 .border {
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border-left: 1px solid #a9a9a9;
+  border-right: 1px solid #a9a9a9;
 }
 .area-btn,
 .area-history {
