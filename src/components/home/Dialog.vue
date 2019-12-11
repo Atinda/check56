@@ -6,11 +6,11 @@
       <!-- 注册 -->
       <div v-if="this.isRegister" class="register">
         <div>
-          手机号码:
+         <div style="text-align:left">手机号码:</div> 
           <input type="number" placeholder="请输入手机号码">
         </div>
         <div style="margin:5px 0;">
-          验证码:
+           <div style="text-align:left">验证码:</div>
           <input type="number" placeholder="请输入验证码">
         </div>
         <button @click="clickRegister()">提交注册</button>
