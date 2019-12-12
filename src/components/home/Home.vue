@@ -3,9 +3,9 @@
     <img :src="this.imageSrc" alt srcset class="home-image">
     <div class="search-area">
       <div class="area-tabs">
-        <span>查专线</span>
-        <span class="border">查公司</span>
-        <span>综合信息</span>
+        <span @click="checkLine()">查专线</span>
+        <span @click="checkLine()" class="border">查公司</span>
+        <span @click="checkLine()">综合信息</span>
       </div>
       <div class="area-btn">
         <el-input v-model="areaValue" size="mini" ></el-input>
@@ -137,8 +137,13 @@ export default {
     };
   },
   methods:{
+    // 搜索
     area(){
       console.log(this.areaValue)
+    },
+    // 跳转到列表页面
+    checkLine(){
+      this.$router.push({name:'listPage'}) // 只能用 name
     }
   }
 };

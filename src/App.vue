@@ -13,7 +13,7 @@
           <!-- 适应移动端的登录按钮组 -->
           <el-button size="mini" class="setBtn" @click="login()">登录</el-button>
           <span class="setMiniBtn" @click="login()">登录</span>
-          <span>关注微信公众号</span>
+          <span @click="login()">关注微信公众号</span>
         </div>
       </el-col>
     </el-row>
