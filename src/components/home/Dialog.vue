@@ -1,19 +1,27 @@
 <template>
   <div class="login">
-    <el-dialog :visible.sync="isShow" width="60%" :before-close="handleClose">
+    <el-dialog :visible.sync="isShow" :width="width" :before-close="handleClose">
       <!-- 登录 -->
       <img v-if="this.isImg" @click="clickImg()" :src="this.imageSrc" alt srcset class="logo-image">
       <!-- 注册 -->
       <div v-if="this.isRegister" class="register">
         <div>
-         <div style="text-align:left">手机号码:</div> 
-          <input type="number" placeholder="请输入手机号码">
+          <div style="text-align:left">手机号码:</div>
+          <el-input
+            v-model="phoneNumber"
+            placeholder="请输入手机号码"
+            size="mini"
+            type="text"
+            maxlength="11"
+            show-word-limit
+            @input="phoneNumbers($event)"
+          ></el-input>
         </div>
         <div style="margin:5px 0;">
-           <div style="text-align:left">验证码:</div>
-          <input type="number" placeholder="请输入验证码">
+          <div style="text-align:left">验证码:</div>
+          <el-input v-model="verCode" placeholder="请输入验证码" size="mini" @input="verCodes($event)"></el-input>
         </div>
-        <button @click="clickRegister()">提交注册</button>
+        <el-button size="mini" @click="clickRegister()">提交注册</el-button>
       </div>
       <!-- 选择城市 -->
       <div v-if="this.isCity" class="choice-city">
@@ -35,16 +43,35 @@
             <span>重庆</span>
           </div>
         </div>
+        <v-distpicker
+          :province="select.province"
+          :city="select.city"
+          hide-area
+          @selected="selected"
+        ></v-distpicker>
         <div class="city-search">
-          <input type="text">
-          <button>搜索</button>
+          <el-input v-model="cityName"
+            placeholder="请输入城市名称"
+            type="text"
+            size="mini">
+            <template slot="prepend">搜索</template>
+          </el-input>
+          <!-- <el-input
+            v-model="cityName"
+            placeholder="请输入城市名称"
+            type="text"
+            size="mini"
+            style="width:100%;margin-right:5px;"
+          ></el-input>
+          <el-button size="mini" @click="searchCity()">搜索</el-button> -->
         </div>
+        
         <div class="city-search-items">
-          <span>A</span>
+          <!-- <span>A</span>
           <span>鞍山</span>
           <span>安阳</span>
           <span>安庆</span>
-          <span>安康</span>
+          <span>安康</span> -->
         </div>
       </div>
     </el-dialog>
@@ -56,18 +83,35 @@ export default {
   name: "Dialog",
   data() {
     return {
+      phoneNumber: null, // 手机号码
+      verCode: null, // 验证码
+      cityName: null, // 搜索的城市名称
       imageSrc: require("../../assets/images/account.png"),
+      // 显示对应视图的Boolea
       isImg: true,
       isRegister: false,
-      isCity: false
+      isCity: false,
+      width: "60%",
+      select: { province: "广东省", city: "广州市" } //地区默认值
     };
   },
   props: {
     isShow: Boolean
   },
   methods: {
+    // 关闭弹窗
     handleClose() {
       this.$emit("setFalse", false);
+    },
+    // 手机号码
+    phoneNumbers(e) {
+      console.log(e);
+      this.$forceUpdate();
+    },
+    // 验证码
+    verCodes(e) {
+      console.log(e);
+      this.$forceUpdate();
     },
     // 点击登录图片
     clickImg() {
@@ -80,6 +124,16 @@ export default {
       this.isImg = false;
       this.isRegister = false;
       this.isCity = true;
+      this.width = "95%";
+      console.log("phone:", this.phoneNumber, "verCode:", this.verCode);
+    },
+    // 搜索城市
+    searchCity() {
+      console.log("搜索城市名：", this.cityName);
+    },
+    // 选择城市
+    selected(data) {
+      console.log(data);
     }
   }
 };
@@ -90,32 +144,37 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
 }
-.city-position,.city-hot-items{
+.city-position,
+.city-hot{
   padding: 5px;
   border-bottom: 1px solid gray;
 }
-.city-position-items,.city-hot-items{
+.city-position-items,
+.city-hot-items {
   flex-flow: wrap;
   display: flex;
 }
-.city-position-items span,.city-hot-items span {
+.city-position-items span,
+.city-hot-items span {
   display: inline-block;
   max-width: 60px;
-  padding: 4px;
   margin: 3px;
-  border: 1px solid gray;
 }
-.city-search-items{
+.city-search-items {
   margin-top: 15px;
   display: flex;
   flex-direction: column;
 }
-.city-search-items span{
+.city-search-items span {
   display: block;
   border-bottom: 1px solid gray;
   text-align: left;
 }
-.city-search{
+.city-search {
+  display: flex;
   padding: 5px;
 }
+.distpicker-address-wrapper{
+    margin: 10px 0;
+  }
 </style>

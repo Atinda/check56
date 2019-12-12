@@ -8,8 +8,8 @@
         <span>综合信息</span>
       </div>
       <div class="area-btn">
-        <el-input size="mini" ></el-input>
-        <el-button size="mini">搜索</el-button>
+        <el-input v-model="areaValue" size="mini" ></el-input>
+        <el-button style="margin-left:10px;" size="mini" @click="area()">搜索</el-button>
       </div>
       <div class="area-history">
         <span>历史记录:</span>
@@ -58,6 +58,8 @@ export default {
   name: "Home",
   data() {
     return {
+      // 搜索值
+      areaValue:null,
       // logo
       imageSrc: require("../../assets/images/logo.png"),
       // 地区数据
@@ -133,12 +135,16 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    area(){
+      console.log(this.areaValue)
+    }
   }
 };
 </script>
 <style scoped>
-.home,
-.content {
+.home{
   height: 100%;
 }
 .area-tabs {
