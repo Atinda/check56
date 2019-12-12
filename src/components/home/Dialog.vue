@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <el-dialog :visible.sync="isShow" :width="width" :before-close="handleClose">
+    <el-dialog class="dialog-width" :visible.sync="isShow" :width="width" :before-close="handleClose">
       <!-- 登录 -->
       <img v-if="this.isImg" @click="clickImg()" :src="this.imageSrc" alt srcset class="logo-image">
       <!-- 注册 -->
@@ -53,17 +53,9 @@
           <el-input v-model="cityName"
             placeholder="请输入城市名称"
             type="text"
-            size="mini">
+            size="mini" @input="searchCity()">
             <template slot="prepend">搜索</template>
           </el-input>
-          <!-- <el-input
-            v-model="cityName"
-            placeholder="请输入城市名称"
-            type="text"
-            size="mini"
-            style="width:100%;margin-right:5px;"
-          ></el-input>
-          <el-button size="mini" @click="searchCity()">搜索</el-button> -->
         </div>
         
         <div class="city-search-items">
@@ -173,7 +165,9 @@ export default {
 .city-search {
   display: flex;
   padding: 5px;
+  margin: 0 auto;
 }
+
 .distpicker-address-wrapper{
     margin: 10px 0;
   }

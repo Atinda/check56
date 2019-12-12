@@ -118,5 +118,18 @@
     .city-search-items span {
         cursor: pointer
     }
+    .city-search input {
+        width: 100%
+      }
+      .distpicker-address-wrapper select{
+        height: 35px;
+      }
     /* ------------------------------选择城市结束----------------------------- */
+    /* ------------------------------主页弹窗开始----------------------------- */
+    .dialog-width{
+        width:60%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    /* ------------------------------主页弹窗结束----------------------------- */
 }
