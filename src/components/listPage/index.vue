@@ -69,7 +69,6 @@ export default {
 }
 .listPage-hot {
   display: flex;
-  margin-top: 5px;
   height: 25px;
   line-height: 25px;
   border-bottom: 1px solid gray;

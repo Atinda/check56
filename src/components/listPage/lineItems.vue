@@ -15,8 +15,11 @@
       </div>
       <div class="items-info" v-for="itemList in item.itemList" :key="itemList.id">
         <div class="info-header">
-          <span>公司名称:{{itemList.company}}</span>
-          <span>评分:{{itemList.score}}</span>
+          <span style="text-align:left">公司名称:{{itemList.company}}</span>
+          <span style="text-align:righ;display:flex;">
+            <span style="width:40px">评分:</span>
+            <el-rate disabled v-model="itemList.score" :colors="colors"></el-rate>
+          </span>
         </div>
         <div class="info-content">
           <div class="content-img">
@@ -24,21 +27,32 @@
           </div>
           <div class="content-detailed">
             <div class="detailed-top">
-              <div>
+              <div class="top-info2">
                 <span>始:{{itemList.start}}</span>
                 <span>终:{{itemList.end}}</span>
                 <span>{{itemList.title}}</span>
-              </div>
-              <div>
                 <span>座机:{{itemList.landline}}</span>
                 <span>手机:{{itemList.phone}}</span>
                 <span>联系人:{{itemList.contacts}}</span>
-              </div>
-              <div>
                 <span>纯重:{{itemList.weight}}</span>
                 <span>纯泡:{{itemList.foam}}</span>
                 <span>时效:{{itemList.efficiency}}</span>
               </div>
+              <!-- <div class="top-info">
+                <span>始:{{itemList.start}}</span>
+                <span>终:{{itemList.end}}</span>
+                <span>{{itemList.title}}</span>
+              </div>
+              <div class="top-info">
+                <span>座机:{{itemList.landline}}</span>
+                <span>手机:{{itemList.phone}}</span>
+                <span>联系人:{{itemList.contacts}}</span>
+              </div>
+              <div class="top-info">
+                <span>纯重:{{itemList.weight}}</span>
+                <span>纯泡:{{itemList.foam}}</span>
+                <span>时效:{{itemList.efficiency}}</span>
+              </div>-->
             </div>
             <div class="detailed-bottom">
               <el-button size="mini">发货</el-button>
@@ -65,7 +79,7 @@ export default {
             {
               id: 1,
               company: "长沙五洲",
-              score: 5,
+              score: 4,
               img: "#",
               type: "VIP商家",
               start: "开始",
@@ -81,7 +95,7 @@ export default {
             {
               id: 2,
               company: "长沙五洲",
-              score: 5,
+              score: 4.5,
               img: "#",
               type: "推荐商家",
               start: "开始",
@@ -121,7 +135,7 @@ export default {
             {
               id: 1,
               company: "长沙五洲",
-              score: 5,
+              score: 4,
               img: "#",
               type: "VIP商家",
               start: "开始",
@@ -137,7 +151,7 @@ export default {
             {
               id: 2,
               company: "长沙五洲",
-              score: 5,
+              score: 3.5,
               img: "#",
               type: "推荐商家",
               start: "开始",
@@ -177,13 +191,7 @@ export default {
         { name: 4, imageSrc: require("../../assets/images/logo.png") },
         { name: 5, imageSrc: require("../../assets/images/logo.png") }
       ],
-      destination: null, // 目的地
-      type: null, // 类型
-      sort: null, // 排序
-      distance: "1000", // 距离
-      weight: "500", // 纯重
-      foam: "600", // 纯泡
-      shape: "400" // 异形
+      colors: ['#99A9BF', '#F7BA2A', '#FF9900']
     };
   },
   methods: {
@@ -204,7 +212,31 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+.info-header span{
+  width:50%;
+}
+.items-header {
+  padding: 0 5px;
+  margin-top: 5px;
+}
+.company-items {
+  margin: 5px 5px 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
 .info-content {
   display: flex;
+}
+.items-info {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid gray;
+}
+
+.top-info2 {
+  display: flex;
+  flex-direction: column;
+  /* flex-flow: wrap; */
 }
 </style>
