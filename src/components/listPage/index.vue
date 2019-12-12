@@ -6,59 +6,35 @@
         <img :src="item.imageSrc" alt="广告图片" srcset class="home-image2" height="100%">
       </el-carousel-item>
     </el-carousel>
-    <!-- 目的地基础信息 -->
-    <div class="listPage-search">
-      <div style="display:flex">
-        <span>目的地</span>
-        <el-input placeholder="请输入城市名称" v-model="destination" type="text"
-            size="mini" >
-          <template slot="append"><el-button size="mini" @click="searchCity()">搜索</el-button></template>
-        </el-input>
+    <div class="listPage-content">
+      <!-- 兼容移动端的显示 -->
+      <el-collapse class="showListSearch1">
+        <el-collapse-item title="基础搜索" name="1">
+          <vsearch></vsearch>
+        </el-collapse-item>
+      </el-collapse>
+      <!-- 如果窗口宽度在768PX以上时显示次组件 -->
+      <vsearch class="showListSearch2"></vsearch>
+      <!-- 热搜路线 -->
+      <div class="listPage-hot">
+        <span style="margin-left:7%">热搜线路:</span>
+        <span style="margin:0 10px">长沙市至北京市</span>
+        <span>长沙市至南京市</span>
       </div>
-      <div style="display:flex">
-        <span>类型</span>
-        <el-select v-model="type" size="mini">
-          <el-option label="零担" value="零担"></el-option>
-          <el-option label="冷链" value="冷链"></el-option>
-          <el-option label="危化" value="危化"></el-option>
-        </el-select>
-      </div>
-      <div>
-        <span>排序</span>
-        <el-select  v-model="sort" size="mini">
-          <el-option label="评分最高" value="评分最高"></el-option>
-          <el-option label="时效最短" value="时效最短"></el-option>
-          <el-option label="价格最低" value="价格最低"></el-option>
-        </el-select>
-        <span>距离:{{distance}}公里</span>
-      </div>
-      <div>
-        <span>市场运价纯重:{{weight}}元/吨</span>
-        <span>纯泡:{{foam}}元/吨</span>
-        <span>异形:{{shape}}元/吨</span>
-      </div>
+      <line-Items></line-Items>
     </div>
-    <!-- 热搜路线 -->
-    <div class="listPage-hot">
-      <span>热搜线路:</span>
-      <span>长沙市至北京市</span>
-      <span>长沙市至南京市</span>
-    </div>
-
-    <!-- 零担专线 -->
-    <div class="listPage-hot">
-      <!-- 零担专线区域广告位 -->
-      <div class="listPage-cold"></div>
-    </div>
-
-    <!-- 冷链专线 -->
-    <div class="listPage-cold"></div>
   </div>
 </template>
 
 <script>
+import vsearch from "./search.vue";
+import lineItems from "./lineItems.vue";
 export default {
   name: "listPage",
+  components: {
+    vsearch,
+    lineItems
+  },
   data() {
     return {
       // 广告数据
@@ -69,23 +45,37 @@ export default {
         { name: 4, imageSrc: require("../../assets/images/logo.png") },
         { name: 5, imageSrc: require("../../assets/images/logo.png") }
       ],
-      destination: null,    // 目的地
-      type: null,           // 类型
-      sort: null,           // 排序
-      distance:'1000',      // 距离
-      weight:'500',         // 纯重
-      foam:'600',           // 纯泡
-      shape:'400',          // 异形
+      destination: null, // 目的地
+      type: null, // 类型
+      sort: null, // 排序
+      distance: "1000", // 距离
+      weight: "500", // 纯重
+      foam: "600", // 纯泡
+      shape: "400" // 异形
     };
   },
   methods: {
     // 搜索城市名称
-    searchCity(){
-      console.log(this.destination)
+    searchCity() {
+      console.log(this.destination);
     }
   }
 };
 </script>
 
 <style scoped>
+.el-collapse {
+  border: none;
+}
+.listPage-hot {
+  display: flex;
+  margin-top: 5px;
+  height: 25px;
+  line-height: 25px;
+  border-bottom: 1px solid gray;
+}
+.el-carousel__indicator,
+.el-carousel__indicator--horizontal {
+  padding: 0px !important;
+}
 </style>

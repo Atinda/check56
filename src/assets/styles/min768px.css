@@ -1,135 +1,208 @@
 /* 视窗>=768时的样式表 */
 
 @media (min-width: 768px) {
-    /* 公共样式 */
-    html,
-    body {
-        font-size: 14px !important;
-    }
-    /* ------------------------------主页样式开始----------------------------- */
-    /* 头部 */
-    .header-row {
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-    }
-    /* 登录按钮 */
-    .setBtn {
-        display: block !important;
-        padding: 0 15px;
-        margin: 5px;
-    }
-    .setMiniBtn {
-        display: none;
-        cursor: pointer
-    }
-    /* 主页中的图片 */
-    .home-image {
-        height: 60px;
-        width: 200px
-    }
-    /* logo中的图片 */
-    .logo-image {
-        margin: 0 auto;
-        height: 200px;
-        width: 250px
-    }
-    /* 搜索区域 */
-    .search-area {
-        max-width: 500px;
-        margin: 0 auto;
-        border: 1px solid #a9a9a9;
-        border-radius: 5px;
-    }
-    .area-tabs span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .area-tabs {
-        height: 28px;
-    }
-    /* 广告区域 */
-    .banner {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .home-image1 {
-        display: none;
-    }
-    .home-image2 {
-        display: block;
-        width: 100%;
-    }
-    .el-carousel__container {
-        height: 100px;
-        width: 100%;
-    }
-    .setSwitch {
-        padding: 10px;
-        background: #dacfcf;
-        border-radius: 5px;
-    }
-    /* 地区区域 */
-    .member-line {
-        margin: 0 5%;
-        border: 1px solid gray;
-    }
-    .cityArea {
-        display: flex;
-        height: 28px;
-    }
-    .cityArea span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 1px solid gray;
-        border-right: 1px solid gray;
-    }
-    .company-item {
-        width: 45%;
-        height: 100px;
-        background: white
-    }
-    .company-image {
-        width: 100%;
-        height: 75%;
-        padding: 0 20px;
-    }
-    /* ------------------------------主页样式结束----------------------------- */
-    /* ------------------------------注册页面开始----------------------------- */
-    .register {
-        margin: 0 25%;
-        max-width: 350px;
-    }
-    .register input {
-        margin: 5px 0;
-        width: 100%;
-        border-radius: 5px;
-        height: 20px;
-    }
-    /* ------------------------------注册页面结束----------------------------- */
-    /* ------------------------------选择城市开始----------------------------- */
-    .city-search input {
-        width: 66%
-    }
-    .city-position-items span,
-    .city-hot-items span,
-    .city-search-items span {
-        cursor: pointer
-    }
-    .city-search input {
-        width: 100%
-      }
-      .distpicker-address-wrapper select{
-        height: 35px;
-      }
-    /* ------------------------------选择城市结束----------------------------- */
-    /* ------------------------------主页弹窗开始----------------------------- */
-    .dialog-width{
-        width:60%;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-    /* ------------------------------主页弹窗结束----------------------------- */
+
+  /* 公共样式 */
+  html,
+  body {
+    font-size: 14px !important;
+  }
+
+  /* ------------------------------主页样式开始----------------------------- */
+  /* 头部 */
+  .header-row {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  /* 登录按钮 */
+  .setBtn {
+    display: block !important;
+    padding: 0 15px;
+    margin: 5px;
+  }
+
+  .setMiniBtn {
+    display: none;
+    cursor: pointer
+  }
+
+  /* 主页中的图片 */
+  .home-image {
+    height: 60px;
+    width: 200px
+  }
+
+  /* logo中的图片 */
+  .logo-image {
+    margin: 0 auto;
+    height: 200px;
+    width: 250px
+  }
+
+  /* 搜索区域 */
+  .search-area {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #a9a9a9;
+    border-radius: 5px;
+  }
+
+  .area-tabs span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .area-tabs {
+    height: 28px;
+  }
+
+  /* 广告区域 */
+  .banner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .home-image1 {
+    display: none;
+  }
+
+  .home-image2 {
+    display: block;
+    width: 100%;
+  }
+
+  .el-carousel__container {
+    height: 100px;
+    width: 100%;
+  }
+
+  .setSwitch {
+    padding: 10px;
+    background: #dacfcf;
+    border-radius: 5px;
+  }
+
+  /* 地区区域 */
+  .member-line {
+    margin: 0 5%;
+    border: 1px solid gray;
+  }
+
+  .cityArea {
+    display: flex;
+    height: 28px;
+  }
+
+  .cityArea span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+  }
+
+  .company-item {
+    width: 45%;
+    height: 100px;
+    background: white
+  }
+
+  .company-image {
+    width: 100%;
+    height: 75%;
+    padding: 0 20px;
+  }
+
+  /* ------------------------------主页样式结束----------------------------- */
+  /* ------------------------------注册页面开始----------------------------- */
+  .register {
+    margin: 0 25%;
+    max-width: 350px;
+  }
+
+  .register input {
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    height: 20px;
+  }
+
+  /* ------------------------------注册页面结束----------------------------- */
+  /* ------------------------------选择城市开始----------------------------- */
+  .city-search input {
+    width: 66%
+  }
+
+  .city-position-items span,
+  .city-hot-items span,
+  .city-search-items span {
+    cursor: pointer
+  }
+
+  .city-search input {
+    width: 100%
+  }
+
+  .distpicker-address-wrapper select {
+    height: 35px;
+  }
+
+  /* ------------------------------选择城市结束----------------------------- */
+  /* ------------------------------主页弹窗开始----------------------------- */
+  .dialog-width {
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ------------------------------主页弹窗结束----------------------------- */
+
+  /* ------------------------------列表页面样式开始----------------------------- */
+  .showListSearch1 {
+    display: none;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .showListSearch2 {
+    display: block;
+  }
+.listPage-content{
+    margin: 0 8px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+  /* 基础搜索 */
+  .search-wrap {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    text-align: center;
+    line-height: 28px;
+  }
+
+  .search-item {
+    margin-top: 5px;
+    width: 30%
+  }
+
+  .search-item span {
+    width: 24%;
+    text-align: right;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: space-evenly;
+    margin-top:5px;
+    height: 30px;
+    line-height:30px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+  }
+  /* ------------------------------列表页面样式结束----------------------------- */
 }

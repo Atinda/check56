@@ -101,7 +101,54 @@
   .city-search input {
     width: 100%
   }
-  .distpicker-address-wrapper select{
+
+  .distpicker-address-wrapper select {
     height: 30px;
   }
+
+  /* ------------------------------列表页面样式开始----------------------------- */
+  .showListSearch1 {
+    display: block;
+  }
+
+  .showListSearch2 {
+    display: none;
+  }
+
+  /* 基础搜索 */
+  .el-collapse-item {
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    background: #eae2e2;
+    text-align: 35px;
+  }
+
+  .el-collapse-item__header {
+    height: 18px;
+    background: #eae2e2;
+  }
+  .el-collapse-item__content{
+    padding: 0;
+  }
+  .search-item {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+  }
+  .search-item span {
+    width: 20%;
+    text-align: left;
+  }
+  .search-item .itemValue {
+    width: 80%;
+  }
+  .info-item {
+    display: flex;
+    flex-direction: column
+  }
+  .info-item span{
+    text-align: left
+  }
+  /* ------------------------------列表页面样式结束----------------------------- */
 }
