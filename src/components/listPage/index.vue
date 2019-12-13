@@ -1,7 +1,7 @@
 <template>
   <div id="listPage">
     <!-- 广告位 -->
-    <el-carousel :interval="4000" type="card" style="margin-top:8px;" class="isShow-carousel">
+    <el-carousel :interval="4000" type="card" style="margin-top:8px;" class="isShow-carousel2">
       <el-carousel-item v-for="item in bannerList" :key="item.id" class="setSwitch">
         <img :src="item.imageSrc" alt="广告图片" srcset class="home-image2" height="100%">
       </el-carousel-item>
