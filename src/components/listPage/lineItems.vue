@@ -33,7 +33,7 @@
             <span class="content-type">{{itemList.type}}</span>
             <!-- <img class="content-BG" :src="itemList.img"/> -->
           </div>
-          <div class="content-detailed">
+          <!-- <div class="content-detailed">
             <div class="detailed-top">
               <div class="top-info">
                 <span>始:{{itemList.start}}</span>
@@ -66,7 +66,7 @@
             <div class="detailed-bottom">
               <el-button size="mini">发货</el-button>
             </div>
-          </div>
+          </div> -->
         </div>
         <el-carousel trigger="click" height="50px">
           <el-carousel-item v-for="item in 4" :key="item">
